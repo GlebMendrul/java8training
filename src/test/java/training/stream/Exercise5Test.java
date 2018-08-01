@@ -10,8 +10,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -22,7 +22,7 @@ public class Exercise5Test extends BaseTest {
         List<Customer> customerList = MALL.getCustomerList();
 
         /**
-         * Create a list of customer names by using {@link Stream#collect} and {@link Collectors#toList}
+         * Create a list of customer names by using
          */
         List<String> nameList = null;
 
@@ -35,7 +35,7 @@ public class Exercise5Test extends BaseTest {
         List<Customer> customerList = MALL.getCustomerList();
 
         /**
-         * Create a set of customer age by using {@link Stream#collect} and {@link Collectors#toSet}
+         * Create a set of customer age
          */
         Set<Integer> ageSet = null;
 
@@ -84,6 +84,23 @@ public class Exercise5Test extends BaseTest {
                 assertThat(v, is(2L));
             } else {
                 assertThat(v, is(1L));
+            }
+        });
+    }
+
+    @Test
+    public void mapByCustomerName() {
+        List<Customer> customerList = MALL.getCustomerList();
+
+        /**
+         * Create a map of name as key and customer itself as value
+         */
+        Map<String, Customer> ageDistribution = null;
+
+        assertThat(ageDistribution.size(), is(10));
+        ageDistribution.forEach((k, v) -> {
+            if (customerList.stream().map(Customer::getName).collect(toList()).contains(k)) {
+                assertThat(v, is(notNullValue()));
             }
         });
     }

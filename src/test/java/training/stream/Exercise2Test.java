@@ -4,11 +4,9 @@ package training.stream;
 import org.junit.Test;
 import training.util.domain.BaseTest;
 import training.util.domain.Customer;
-import training.util.domain.Item;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -23,7 +21,6 @@ public class Exercise2Test extends BaseTest {
 
         /**
          * Create a stream with ascending ordered age values.
-         * Use {@link Stream#sorted} to sort them.
          */
         Stream<Integer> sortedAgeStream = null;
 
@@ -50,7 +47,7 @@ public class Exercise2Test extends BaseTest {
         List<Customer> customerList = MALL.getCustomerList();
 
         /**
-         * Create a stream with top 3 rich customers using {@link Stream#limit} to limit the size of the stream
+         * Create a stream with top 3 rich customers
          */
         Stream<String> top3RichCustomerStream = null;
 
@@ -63,7 +60,7 @@ public class Exercise2Test extends BaseTest {
         List<Customer> customerList = MALL.getCustomerList();
 
         /**
-         * Create a stream with distinct age values using {@link Stream#distinct}
+         * Create a stream with distinct age values
          */
         Stream<Integer> distinctAgeStream = null;
 
@@ -76,13 +73,10 @@ public class Exercise2Test extends BaseTest {
         List<Customer> customerList = MALL.getCustomerList();
 
         /**
-         * Create a stream with items' names stored in {@link Customer.wantToBuy}
-         * Use {@link Stream#flatMap} to create a stream from each element of a stream.
+         * Create a list with items names stored in {@link Customer.wantToBuy}
          */
-        Function<Customer, Stream<Item>> getItemStream = null;
-        Stream<String> itemStream = null;
 
-        List<String> itemList = itemStream.collect(Collectors.toList());
+        List<String> itemList = null;
         assertThat(itemList,
                 contains("small table", "plate", "fork", "ice cream", "screwdriver", "cable", "earphone", "onion",
                         "ice cream", "crisps", "chopsticks", "cable", "speaker", "headphone", "saw", "bond",

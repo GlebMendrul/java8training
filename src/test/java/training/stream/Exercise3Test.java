@@ -20,7 +20,7 @@ public class Exercise3Test extends BaseTest {
         List<Customer> customerList = MALL.getCustomerList();
 
         /**
-         * Count how many items there are in {@link Customer.wantToBuy} using {@link Stream#count}
+         * Count how many items there are in {@link Customer.wantToBuy}
          */
         long sum = 0L;
 
@@ -32,13 +32,12 @@ public class Exercise3Test extends BaseTest {
         List<Customer> customerList = MALL.getCustomerList();
 
         /**
-         * Find the richest customer's budget by using {@link Stream#max} and {@link Comparator#naturalOrder}
+         * Find the richest customer's budget
          * Don't use {@link Stream#sorted}
          */
         Comparator<Integer> comparator = null;
         Optional<Integer> richestCustomer = null;
 
-        assertThat(comparator.getClass().getSimpleName(), is("NaturalOrderComparator"));
         assertThat(richestCustomer.get(), is(12000));
     }
 
@@ -47,7 +46,7 @@ public class Exercise3Test extends BaseTest {
         List<Customer> customerList = MALL.getCustomerList();
 
         /**
-         * Find the youngest customer by using {@link Stream#min}
+         * Find the youngest customer
          * Don't use {@link Stream#sorted}
          */
         Comparator<Customer> comparator = null;

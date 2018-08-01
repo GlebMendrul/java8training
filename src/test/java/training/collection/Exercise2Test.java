@@ -23,7 +23,7 @@ public class Exercise2Test {
         Map<String, Integer> map = new HashMap<>(this.map);
 
         /**
-         * Try to get from key "Alice" using {@link Map#getOrDefault}. If the key doesn't exist, use 30 as default.
+         * Try to get from key "Alice". If the key doesn't exist, use 30 as default.
          */
         Integer defaultVal = null;
 
@@ -35,10 +35,8 @@ public class Exercise2Test {
         Map<String, Integer> map = new HashMap<>(this.map);
 
         /**
-         * Try to put 2 entry with key as "Alice" value as 32, key as "Joe" and value as 32 using {@link Map#putIfAbsent}.
+         * Try to put 2 entry with key as "Alice" value as 32, key as "Joe" and value as 32 using, but not override if exists.
          */
-        // map.
-        // map.
 
         assertThat(map.get("Alice"), is(32));
         assertThat(map.get("Joe"), is(22));
@@ -49,12 +47,10 @@ public class Exercise2Test {
         Map<String, Integer> map = new HashMap<>(this.map);
 
         /**
-         * Merge 2 entry to {@link map} with key="Alice" value=32, key="Joe" value=32 using {@link Map#merge}.
+         * Merge 2 entry to {@link map} with key="Alice" value=32, key="Joe" value=32
          * If the value already exist for the key, remap with sum value.
          */
-        BiFunction<Object, Object, Integer> remappingFunction = null;
-        // map.
-        // map.
+        BiFunction<Object, Integer, Integer> remappingFunction = null;
 
         assertThat(map.get("Alice"), is(32));
         assertThat(map.get("Joe"), is(54));
@@ -65,12 +61,9 @@ public class Exercise2Test {
         Map<String, Integer> map = new HashMap<>(this.map);
 
         /**
-         * Try to increment the value for keys "Joe", "Steven" and "Alice" using {@link Map#computeIfPresent}.
+         * Try to increment the value for keys "Joe", "Steven" and "Alice"
          */
-        BiFunction<Object, Object, Integer> remappingFunction = null;
-        // map.
-        // map.
-        // map.
+        BiFunction<Object, Integer, Integer> remappingFunction;
 
         assertThat(map.get("Joe"), is(23));
         assertThat(map.get("Steven"), is(28));

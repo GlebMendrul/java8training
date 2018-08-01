@@ -15,7 +15,7 @@ public class Exercise6Test {
     @Test
     public void streamFromValues() {
         /**
-         * Create a stream with string values "a" "b" "c" by using {@link Stream#of}
+         * Create a stream with string values "a" "b" "c"
          */
         Stream<String> abcStream = null;
 
